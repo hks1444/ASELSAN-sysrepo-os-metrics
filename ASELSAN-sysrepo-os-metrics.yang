@@ -1,0 +1,41 @@
+module ASELSAN-sysrepo-os-metrics{
+  namespace "ASELSAN-sysrepo-os-metrics";
+  prefix "asom";
+
+  rpc freeg {
+    description "free -g";
+    output {
+      leaf out {
+        type string;
+        description "output of free -g command";
+      }
+    }
+  }
+  rpc uptime {
+    description "uptime";
+    output {
+      leaf out {
+        type string;
+        description "output of uptime command";
+      }
+    }
+  }
+    rpc lscpu {
+    description "lscpu";
+    output {
+      leaf out {
+        type string;
+        description "output of lscpu command";
+      }
+    }
+  }
+  rpc top {
+    description "top -b -n 1 > out.txt";
+    output {
+      leaf out {
+        type string;
+        description "output of top -b -n 1 > out.txt command";
+      }
+    }
+  }
+}
