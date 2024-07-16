@@ -2,10 +2,10 @@ from ncclient import manager
 from lxml import etree
 manager1 = None
 # Replace with your Netopeer server details
-host = 'hasan-ThinkCentre-neo-50t-Gen-4'
+host = ''
 port = 830
-username = 'hasan'
-password = 'Hasankerem1.'
+username = ''
+password = ''
 
 def send_rpc_request(rpc_request):
     global manager1
