@@ -1,0 +1,19 @@
+sysrepocfg --rpc=vim
+
+<get-ip xmlns="ASELSAN-Sysrepo-OS-Metrics"/>
+
+<set-time xmlns="ASELSAN-Sysrepo-OS-Metrics">
+  <newtime>12:34:56</newtime>
+</set-time>
+
+<get-time xmlns="ASELSAN-Sysrepo-OS-Metrics"/>
+
+<sync-time xmlns="ASELSAN-Sysrepo-OS-Metrics"/>
+
+<freeg xmlns="ASELSAN-Sysrepo-OS-Metrics"/>
+
+<uptime xmlns="ASELSAN-Sysrepo-OS-Metrics"/>
+
+<lscpu xmlns="ASELSAN-Sysrepo-OS-Metrics"/>
+
+<top xmlns="ASELSAN-Sysrepo-OS-Metrics"/>

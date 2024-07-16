@@ -1,0 +1,79 @@
+module ASELSAN-Sysrepo-OS-Metrics{
+  namespace "ASELSAN-Sysrepo-OS-Metrics";
+  prefix "asom";
+
+  rpc freeg {
+    description "free -g";
+    output {
+      leaf out {
+        type string;
+        description "output of free -g command";
+      }
+    }
+  }
+  rpc uptime {
+    description "uptime";
+    output {
+      leaf out {
+        type string;
+        description "output of uptime command";
+      }
+    }
+  }
+    rpc lscpu {
+    description "lscpu";
+    output {
+      leaf out {
+        type string;
+        description "output of lscpu command";
+      }
+    }
+  }
+  rpc top {
+    description "top -b -n 1 > out.txt";
+    output {
+      leaf out {
+        type string;
+        description "output of top -b -n 1 > out.txt command";
+      }
+    }
+  }
+  typedef timeformat {
+    type string {
+      pattern '[0-9]{2}:[0-9]{2}:[0-9]{2}';
+    }
+    description "time format is hh:mm:ss";
+  }
+  rpc set-time {
+    description "set the time";
+
+    input {
+      leaf newtime {
+        type timeformat;
+        description "Time to set.";
+      }
+    }
+  }
+  rpc get-time {
+    description "get the time";
+    output {
+      leaf time {
+        type string;
+        description "current time info on the server";
+      }
+    }
+  }
+  rpc sync-time{
+    description "sync the time";
+  }
+
+  rpc get-ip {
+    description "Get the server's IP address.";
+    output {
+      leaf ip-address {
+        type string;
+        description "IP address of the server.";
+      }
+    }
+  }
+}
