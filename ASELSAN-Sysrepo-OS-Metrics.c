@@ -81,13 +81,7 @@ static int set_time_cb(sr_session_ctx_t *session, uint32_t sub_id, const char *p
     (void)private_data;
 
     int res = set_time(input[0].data.string_val);
-    if (res != 0)
-    {
-        return SR_ERR_INTERNAL;
-    }
-
-    *output_cnt = 0;
-    return SR_ERR_OK;
+    return res;
 }
 
 static int sync_time_cb(sr_session_ctx_t *session, uint32_t sub_id, const char *path, const sr_val_t *input,
@@ -103,12 +97,10 @@ static int sync_time_cb(sr_session_ctx_t *session, uint32_t sub_id, const char *
     (void)private_data;
 
     int result = system("timedatectl set-ntp yes");
-    return result;
     if (result != 0)
     {
         return SR_ERR_INTERNAL;
     }
-    *output_cnt = 0;
     return SR_ERR_OK;
 }
 
